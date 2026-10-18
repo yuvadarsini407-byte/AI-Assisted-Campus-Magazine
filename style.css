@@ -253,7 +253,7 @@ footer p {
 }
 
 /* Responsive design */
-@media (max-width: 900px) {
+@media(max-width: 900px) {
     .grid,
     .articles,
     .article-grid,
@@ -266,7 +266,7 @@ footer p {
     }
 }
 
-@media (max-width: 600px) {
+@media(max-width: 600px) {
     .hero {
         min-height: auto;
         padding: 55px 6%;
