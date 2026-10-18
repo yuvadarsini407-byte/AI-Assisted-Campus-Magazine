@@ -48,4 +48,253 @@ a {
 .hero h1 {
     margin: 15px 0;
     font-family: Georgia, serif;
-    font-size: clamp(
+    font-size: clamp(40px, 8vw, 72px);
+    line-height: 1.1;
+}
+
+.hero h1 span {
+    color: #d8ad6a;
+}
+
+.tagline {
+    color: #e6e0d2;
+}
+
+/* Buttons */
+.button {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 12px 20px;
+    background: #d8ad6a;
+    color: #20271f;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.button:hover {
+    background: #edc98d;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 18px 8%;
+    background: #fff;
+    border-bottom: 1px solid #e5e2da;
+}
+
+nav a {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #a8793e;
+}
+
+/* General sections */
+section {
+    padding: 60px 8%;
+}
+
+section h2 {
+    margin-bottom: 20px;
+    font-family: Georgia, serif;
+    font-size: clamp(28px, 5vw, 42px);
+    line-height: 1.2;
+}
+
+section p {
+    margin-bottom: 15px;
+}
+
+/* Magazine layout */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.grid,
+.articles,
+.article-grid,
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+/* Cards */
+.card,
+.article-card,
+.feature-card {
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #e8e5dc;
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+.card img,
+.article-card img,
+.feature-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.card-content,
+.article-content,
+.feature-content {
+    padding: 22px;
+}
+
+.card h3,
+.article-card h3,
+.feature-card h3 {
+    margin-bottom: 10px;
+    font-family: Georgia, serif;
+    font-size: 22px;
+}
+
+.card p,
+.article-card p,
+.feature-card p {
+    font-size: 15px;
+    color: #5e5e55;
+}
+
+/* Article details */
+.category {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: #8a673c;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.meta {
+    margin-top: 12px;
+    color: #77776d;
+    font-size: 13px;
+}
+
+/* Featured section */
+.featured {
+    background: #eeece4;
+}
+
+.featured-content {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+    gap: 35px;
+}
+
+.featured-content img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* Forms */
+form {
+    width: 100%;
+    max-width: 600px;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 12px;
+    border: 1px solid #d7d4ca;
+    border-radius: 4px;
+    background: #fff;
+    color: #28271f;
+    font: inherit;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 2px solid #d8ad6a;
+    outline-offset: 2px;
+}
+
+/* Footer */
+footer {
+    padding: 35px 8%;
+    background: #263d32;
+    color: #fffaf0;
+    text-align: center;
+}
+
+footer a {
+    color: #d8ad6a;
+}
+
+footer p {
+    margin-bottom: 8px;
+}
+
+/* Responsive design */
+@media (max-width: 900px) {
+    .grid,
+    .articles,
+    .article-grid,
+    .features {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .featured-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero {
+        min-height: auto;
+        padding: 55px 6%;
+    }
+
+    section {
+        padding: 40px 6%;
+    }
+
+    nav {
+        padding: 15px 6%;
+        justify-content: center;
+    }
+
+    .grid,
+    .articles,
+    .article-grid,
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .card img,
+    .article-card img,
+    .feature-card img {
+        height: 200px;
+    }
+
+    footer {
+        padding: 30px 6%;
+    }
+}
