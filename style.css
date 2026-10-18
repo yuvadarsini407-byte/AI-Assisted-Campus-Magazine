@@ -48,7 +48,7 @@ a {
 .hero h1 {
     margin: 15px 0;
     font-family: Georgia, serif;
-    font-size: clamp(40px, 8vw, 72px);
+    font-size: clamp (40px, 8vw, 72px);
     line-height: 1.1;
 }
 
