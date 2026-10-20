@@ -1,304 +1,275 @@
-/* AI-Assisted Campus Magazine - style.css */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-/* Reset */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+    <title>Campus Chronicle - College Magazine</title>
 
-html {
-    scroll-behavior: smooth;
-}
+    <meta name="description" content="Campus news, student stories, college events and achievements.">
 
-body {
-    background: #f8f8f5;
-    color: #28271f;
-    font-family: Arial, sans-serif;
-    line-height: 1.7;
-}
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
 
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
+<body>
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
+    <header>
+        <h1>Campus <span>Chronicle</span></h1>
 
-/* Hero section */
-.hero {
-    min-height: 390px;
-    padding: 70px 8%;
-    background: #263d32;
-    color: #fffaf0;
-}
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#featured">Featured</a>
+            <a href="#news">News</a>
+            <a href="#events">Events</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
-.edition,
-.eyebrow,
-.number {
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 2px;
-}
+    <main>
 
-.hero h1 {
-    margin: 15px 0;
-    font-family: Georgia, serif;
-    font-size: clamp(40px, 8vw, 72px);
-    line-height: 1.1;
-}
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <span class="tag">CAMPUS MAGAZINE 2026</span>
 
-.hero h1 span {
-    color: #d8ad6a;
-}
+                <h2>Discover Stories That Inspire Our Campus</h2>
 
-.tagline {
-    color: #e6e0d2;
-}
+                <p>
+                    Explore campus news, student achievements,
+                    creative stories, upcoming events and college memories.
+                </p>
 
-/* Buttons */
-.button {
-    display: inline-block;
-    margin-top: 18px;
-    padding: 12px 20px;
-    background: #d8ad6a;
-    color: #20271f;
-    border: none;
-    border-radius: 4px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
+                <a href="#news" class="btn">Explore Magazine</a>
+            </div>
+        </section>
 
-.button:hover {
-    background: #edc98d;
-}
+        <section class="section featured" id="featured">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Editor's Choice</h2>
+                    <p>Our latest featured campus story</p>
+                </div>
 
-/* Navigation */
-nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: 15px;
-    padding: 18px 8%;
-    background: #fff;
-    border-bottom: 1px solid #e5e2da;
-}
+                <article class="featured-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1000&q=80"
+                        alt="Students studying together">
 
-nav a {
-    font-size: 14px;
-    font-weight: bold;
-}
+                    <div class="featured-text">
+                        <span class="category">Student Life</span>
 
-nav a:hover {
-    color: #a8793e;
-}
+                        <h3>Building a Better Campus Together</h3>
 
-/* General sections */
-section {
-    padding: 60px 8%;
-}
+                        <p>
+                            College life is about building friendships,
+                            sharing ideas, discovering talents and
+                            creating memories.
+                        </p>
 
-section h2 {
-    margin-bottom: 20px;
-    font-family: Georgia, serif;
-    font-size: clamp(28px, 5vw, 42px);
-    line-height: 1.2;
-}
+                        <p><strong>By:</strong> Campus Editorial Team</p>
 
-section p {
-    margin-bottom: 15px;
-}
+                        <a href="#news" class="read-more">Read More &rarr;</a>
+                    </div>
+                </article>
+            </div>
+        </section>
 
-/* Magazine layout */
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
+        <section class="section" id="news">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Latest Campus Stories</h2>
+                    <p>Discover what's happening around campus</p>
+                </div>
 
-.grid,
-.articles,
-.article-grid,
-.features {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;
-}
+                <div class="news-grid">
 
-/* Cards */
-.card,
-.article-card,
-.feature-card {
-    overflow: hidden;
-    background: #fff;
-    border: 1px solid #e8e5dc;
-    border-radius: 8px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
-}
+                    <article class="card">
+                        <img
+                            src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80"
+                            alt="Student working on a computer">
 
-.card img,
-.article-card img,
-.feature-card img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-}
+                        <div class="card-content">
+                            <span class="category">Technology</span>
+                            <h3>Innovation Begins With Students</h3>
 
-.card-content,
-.article-content,
-.feature-content {
-    padding: 22px;
-}
+                            <p>
+                                Discover how students use technology,
+                                teamwork and creativity to develop
+                                innovative ideas.
+                            </p>
 
-.card h3,
-.article-card h3,
-.feature-card h3 {
-    margin-bottom: 10px;
-    font-family: Georgia, serif;
-    font-size: 22px;
-}
+                            <a href="#contact" class="read-more">
+                                Share Your Story &rarr;
+                            </a>
+                        </div>
+                    </article>
 
-.card p,
-.article-card p,
-.feature-card p {
-    font-size: 15px;
-    color: #5e5e55;
-}
+                    <article class="card">
+                        <img
+                            src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80"
+                            alt="Students spending time together">
 
-/* Article details */
-.category {
-    display: inline-block;
-    margin-bottom: 10px;
-    color: #8a673c;
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
+                        <div class="card-content">
+                            <span class="category">Campus Life</span>
+                            <h3>Friendship and College Memories</h3>
 
-.meta {
-    margin-top: 12px;
-    color: #77776d;
-    font-size: 13px;
-}
+                            <p>
+                                Explore friendships, classroom discussions
+                                and memorable college celebrations.
+                            </p>
 
-/* Featured section */
-.featured {
-    background: #eeece4;
-}
+                            <a href="#gallery" class="read-more">
+                                View Gallery &rarr;
+                            </a>
+                        </div>
+                    </article>
 
-.featured-content {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    align-items: center;
-    gap: 35px;
-}
+                    <article class="card">
+                        <img
+                            src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=800&q=80"
+                            alt="Students participating in a group activity">
 
-.featured-content img {
-    width: 100%;
-    border-radius: 8px;
-}
+                        <div class="card-content">
+                            <span class="category">Achievements</span>
+                            <h3>Celebrating Student Talent</h3>
 
-/* Forms */
-form {
-    width: 100%;
-    max-width: 600px;
-}
+                            <p>
+                                Celebrate student creativity, dedication,
+                                teamwork and achievements.
+                            </p>
 
-input,
-textarea,
-select {
-    width: 100%;
-    margin-bottom: 15px;
-    padding: 12px;
-    border: 1px solid #d7d4ca;
-    border-radius: 4px;
-    background: #fff;
-    color: #28271f;
-    font: inherit;
-}
+                            <a href="#contact" class="read-more">
+                                Submit an Article &rarr;
+                            </a>
+                        </div>
+                    </article>
 
-textarea {
-    min-height: 120px;
-    resize: vertical;
-}
+                </div>
+            </div>
+        </section>
 
-input:focus,
-textarea:focus,
-select:focus {
-    outline: 2px solid #d8ad6a;
-    outline-offset: 2px;
-}
+        <section class="section events" id="events">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Campus Events</h2>
+                    <p>Join our college activities</p>
+                </div>
 
-/* Footer */
-footer {
-    padding: 35px 8%;
-    background: #263d32;
-    color: #fffaf0;
-    text-align: center;
-}
+                <div class="event-list">
 
-footer a {
-    color: #d8ad6a;
-}
+                    <article class="event">
+                        <div class="event-date">
+                            <strong>05</strong>
+                            <span>NOV</span>
+                        </div>
 
-footer p {
-    margin-bottom: 8px;
-}
+                        <div>
+                            <h3>Technical Symposium</h3>
+                            <p>Main Auditorium</p>
+                            <p>10:00 AM</p>
+                        </div>
+                    </article>
 
-/* Responsive design */
-@media (max-width: 900px) {
-    .grid,
-    .articles,
-    .article-grid,
-    .features {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
+                    <article class="event">
+                        <div class="event-date">
+                            <strong>12</strong>
+                            <span>NOV</span>
+                        </div>
 
-    .featured-content {
-        grid-template-columns: 1fr;
-    }
-}
+                        <div>
+                            <h3>Cultural Fest</h3>
+                            <p>College Ground</p>
+                            <p>9:00 AM</p>
+                        </div>
+                    </article>
 
-@media (max-width: 600px) {
-    .hero {
-        min-height: auto;
-        padding: 55px 6%;
-    }
+                    <article class="event">
+                        <div class="event-date">
+                            <strong>20</strong>
+                            <span>NOV</span>
+                        </div>
 
-    section {
-        padding: 40px 6%;
-    }
+                        <div>
+                            <h3>Literary Competition</h3>
+                            <p>Seminar Hall</p>
+                            <p>11:00 AM</p>
+                        </div>
+                    </article>
 
-    nav {
-        padding: 15px 6%;
-        justify-content: center;
-    }
+                </div>
+            </div>
+        </section>
 
-    .grid,
-    .articles,
-    .article-grid,
-    .features {
-        grid-template-columns: 1fr;
-    }
+        <section class="section" id="gallery">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Campus Gallery</h2>
+                    <p>Memories from campus life</p>
+                </div>
 
-    .card img,
-    .article-card img,
-    .feature-card img {
-        height: 200px;
-    }
+                <div class="gallery-grid">
+                    <img
+                        src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=600&q=80"
+                        alt="College students">
 
-    footer {
-        padding: 30px 6%;
-    }
-}
+                    <img
+                        src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=600&q=80"
+                        alt="College library">
 
+                    <img
+                        src="https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=600&q=80"
+                        alt="Campus activities">
 
-   
- 
+                    <img
+                        src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=600&q=80"
+                        alt="Student learning">
+                </div>
+            </div>
+        </section>
+
+        <section class="section newsletter" id="contact">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Join Our Campus Community</h2>
+                    <p>Subscribe to receive campus magazine updates.</p>
+                </div>
+
+                <form id="subscribe-form">
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email address"
+                        aria-label="Email address"
+                        required>
+
+                    <button type="submit" class="btn">Subscribe</button>
+                </form>
+
+                <p id="form-message" role="status" aria-live="polite"></p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <h2>Campus <span>Chronicle</span></h2>
+
+        <p>Celebrating knowledge, creativity and campus life.</p>
+
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#news">Articles</a>
+            <a href="#events">Events</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <p>
+            &copy; <span id="year"></span> Campus Chronicle.
+            All rights reserved.
+        </p>
+    </footer>
+
+</body>
+</html>/* General settings */
+
