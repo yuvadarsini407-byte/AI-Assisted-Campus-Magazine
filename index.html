@@ -1,18 +1,176 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI-Assisted Campus Magazine</title>
-  <link rel="stylesheet" href="./style.css">
+  <meta name="description" content="Campus Connect - an AI-assisted digital magazine for college students.">
+  <title>Campus Connect | Digital Magazine</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="logo" href="#home">Campus<span>Connect</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#study">Study Smart</a>
+        <a href="#ai">Responsible AI</a>
+        <a href="#projects">Projects</a>
+        <a href="#careers">Careers</a>
+      </nav>
+    </div>
+  </header>
+
   <main>
-    <h1>AI-Assisted Campus Magazine</h1>
-    <p>Welcome to our digital campus magazine!</p>
-    <p>Explore campus stories, student creativity, and innovation.</p>
+    <section class="hero" id="home">
+      <div class="container hero-content">
+        <p class="eyebrow">THE STUDENT DIGITAL MAGAZINE</p>
+        <h1>Your Campus.<br><span>Your Ideas. Your Future.</span></h1>
+        <p class="hero-text">
+          Discover study tips, responsible AI guidance, student projects,
+          and career opportunities — all in one place.
+        </p>
+        <a class="button" href="#magazine">Explore Magazine ↓</a>
+      </div>
+    </section>
+
+    <section class="container intro" id="magazine">
+      <p class="eyebrow">WELCOME TO CAMPUS CONNECT</p>
+      <h2>Ideas that inspire students</h2>
+      <p>
+        Campus Connect is an AI-assisted campus magazine created to help
+        students learn, explore technology, share ideas, and prepare for
+        their future careers.
+      </p>
+    </section>
+
+    <section class="container articles">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">EXPLORE OUR STORIES</p>
+          <h2>Magazine Sections</h2>
+        </div>
+        <input id="search" type="search"
+          placeholder="Search articles..."
+          aria-label="Search magazine articles">
+      </div>
+
+      <div class="article-grid" id="articleGrid">
+        <article class="article-card" id="study" data-search="study smart learning exams notes">
+          <div class="card-icon blue">📚</div>
+          <p class="category">LEARNING</p>
+          <h3>Study Smart</h3>
+          <p>Build better study habits, organize notes, and prepare for exams with confidence.</p>
+          <button class="read-more" data-title="Study Smart"
+            data-content="Plan your study sessions, divide large topics into smaller tasks, take clear notes, and review regularly. Practice questions and short breaks can help you study more effectively.">
+            Read article →
+          </button>
+        </article>
+
+        <article class="article-card" id="ai" data-search="responsible artificial intelligence ai ethics privacy">
+          <div class="card-icon purple">🤖</div>
+          <p class="category">TECHNOLOGY</p>
+          <h3>Responsible AI</h3>
+          <p>Learn how to use AI tools ethically while protecting privacy and checking facts.</p>
+          <button class="read-more" data-title="Responsible AI"
+            data-content="Use AI as a learning assistant, not a replacement for your own thinking. Verify facts, protect personal information, acknowledge assistance when required, and follow your institution's academic integrity rules.">
+            Read article →
+          </button>
+        </article>
+
+        <article class="article-card" id="projects" data-search="student projects innovation coding development">
+          <div class="card-icon orange">💡</div>
+          <p class="category">INNOVATION</p>
+          <h3>Student Projects</h3>
+          <p>Turn classroom knowledge into useful projects that solve real-world problems.</p>
+          <button class="read-more" data-title="Student Projects"
+            data-content="Start with a problem you understand. Define the project goal, plan the features, build a small working version, test it, and document the results. Examples include a smart library app or a campus event portal.">
+            Read article →
+          </button>
+        </article>
+
+        <article class="article-card" id="careers" data-search="career jobs resume interview skills internships">
+          <div class="card-icon green">🚀</div>
+          <p class="category">FUTURE</p>
+          <h3>Career Corner</h3>
+          <p>Explore internships, improve your resume, and develop skills for future jobs.</p>
+          <button class="read-more" data-title="Career Corner"
+            data-content="Build a clear resume, practice explaining your projects, develop communication skills, and look for internships related to your interests. Keep a portfolio of your work and continue learning.">
+            Read article →
+          </button>
+        </article>
+      </div>
+      <p id="noResults" class="no-results" hidden>No matching articles found. Try another keyword.</p>
+    </section>
+
+    <section class="newsletter">
+      <div class="container newsletter-content">
+        <div>
+          <p class="eyebrow">STAY CURIOUS</p>
+          <h2>Keep learning. Keep growing.</h2>
+          <p>Explore ideas, share knowledge, and make campus life inspiring.</p>
+        </div>
+        <a class="button button-light" href="#home">Back to top ↑</a>
+      </div>
+    </section>
   </main>
+
+  <footer>
+    <div class="container footer-content">
+      <a class="logo footer-logo" href="#home">Campus<span>Connect</span></a>
+      <p>AI-Assisted Campus Digital Magazine</p>
+      <p>© <span id="year"></span> Campus Connect. Student learning and creativity.</p>
+    </div>
+  </footer>
+
+  <dialog id="articleDialog" aria-labelledby="dialogTitle">
+    <div class="dialog-content">
+      <button id="closeDialog" class="close-button"
+        type="button" aria-label="Close article">×</button>
+      <p class="eyebrow">CAMPUS CONNECT ARTICLE</p>
+      <h2 id="dialogTitle"></h2>
+      <p id="dialogText"></p>
+    </div>
+  </dialog>
+
+  <script>
+    const searchInput = document.getElementById("search");
+    const cards = document.querySelectorAll(".article-card");
+    const noResults = document.getElementById("noResults");
+    const dialog = document.getElementById("articleDialog");
+
+    searchInput.addEventListener("input", function () {
+      const query = this.value.toLowerCase().trim();
+      let visibleCount = 0;
+
+      cards.forEach(function (card) {
+        const text = (card.innerText + " " + card.dataset.search).toLowerCase();
+        const matches = text.includes(query);
+        card.hidden = !matches;
+        if (matches) visibleCount++;
+      });
+
+      noResults.hidden = visibleCount !== 0;
+    });
+
+    document.querySelectorAll(".read-more").forEach(function (button) {
+      button.addEventListener("click", function () {
+        document.getElementById("dialogTitle").textContent = this.dataset.title;
+        document.getElementById("dialogText").textContent = this.dataset.content;
+        dialog.showModal();
+      });
+    });
+
+    document.getElementById("closeDialog").addEventListener("click", function () {
+      dialog.close();
+    });
+
+    dialog.addEventListener("click", function (event) {
+      if (event.target === dialog) dialog.close();
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
