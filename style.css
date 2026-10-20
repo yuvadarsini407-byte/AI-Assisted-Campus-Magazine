@@ -4,7 +4,27 @@
    ================================= */
 
 /* Reset */
-* {
+* { 
+   body.dark-mode {
+  background: #121827;
+  color: #f3f4f6;
+}
+
+body.dark-mode .card,
+body.dark-mode .tool-card,
+body.dark-mode .featured,
+body.dark-mode .event {
+  background: #202b3d;
+  color: #f3f4f6;
+  border-color: #3b4659;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode p {
+  color: inherit;
+}
   box-sizing: border-box;
   margin: 0;
   padding: 0;
