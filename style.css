@@ -48,7 +48,7 @@ a {
 .hero h1 {
     margin: 15px 0;
     font-family: Georgia, serif;
-    font-size: clamp (40px, 8vw, 72px);
+    font-size: clamp(40px, 8vw, 72px);
     line-height: 1.1;
 }
 
@@ -253,7 +253,7 @@ footer p {
 }
 
 /* Responsive design */
-(max-width: 900px) {
+@media (max-width: 900px) {
     .grid,
     .articles,
     .article-grid,
@@ -266,7 +266,7 @@ footer p {
     }
 }
 
-(max-width: 600px) {
+@media (max-width: 600px) {
     .hero {
         min-height: auto;
         padding: 55px 6%;
@@ -298,3 +298,7 @@ footer p {
         padding: 30px 6%;
     }
 }
+
+
+   
+ 
