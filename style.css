@@ -1,0 +1,341 @@
+/* =================================
+   AI-Assisted Campus Digital Magazine
+   Main stylesheet
+   ================================= */
+
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f8f5ef;
+  color: #28271f;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Main container */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Navigation bar */
+.navbar {
+  background: #ffffff;
+  border-bottom: 1px solid #e8e2d8;
+  padding: 16px 0;
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  color: #263d32;
+  font-family: Georgia, serif;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+
+.nav-links a {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.nav-links a:hover {
+  color: #a77b3e;
+}
+
+/* Hero section */
+.hero {
+  min-height: 390px;
+  padding: 70px 5%;
+  background: #263d32;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.edition,
+.eyebrow,
+.number {
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 15px 0;
+  font-family: Georgia, serif;
+  font-size: clamp(40px, 8vw, 72px);
+  line-height: 1.1;
+}
+
+.hero h1 span {
+  color: #d8ad6a;
+}
+
+.hero p {
+  max-width: 600px;
+  margin: 12px auto 24px;
+}
+
+/* Buttons */
+.button {
+  display: inline-block;
+  padding: 12px 22px;
+  background: #d8ad6a;
+  color: #263d32;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #f0cb8e;
+}
+
+/* General sections */
+.section {
+  padding: 60px 0;
+}
+
+.section-heading {
+  margin-bottom: 28px;
+}
+
+.section-heading h2 {
+  margin: 5px 0;
+  color: #263d32;
+  font-family: Georgia, serif;
+  font-size: clamp(28px, 5vw, 42px);
+  line-height: 1.2;
+}
+
+.section-heading > p:not(.eyebrow) {
+  color: #69675f;
+}
+
+/* Featured article */
+.featured {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.featured img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.featured h3 {
+  margin: 12px 0;
+  color: #263d32;
+  font-family: Georgia, serif;
+  font-size: 30px;
+  line-height: 1.25;
+}
+
+.featured p {
+  margin-bottom: 14px;
+}
+
+.featured a strong {
+  color: #80612f;
+}
+
+.story-label {
+  color: #80612f;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Story cards */
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.story-card {
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #e8e2d8;
+  border-radius: 8px;
+}
+
+.story-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-content h3 {
+  margin: 8px 0;
+  color: #263d32;
+  font-family: Georgia, serif;
+  font-size: 22px;
+  line-height: 1.3;
+}
+
+.card-content p:not(.story-label) {
+  color: #69675f;
+}
+
+/* Photo gallery */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* About project */
+.about {
+  background: #eee8dc;
+}
+
+.about .section-heading {
+  margin-bottom: 20px;
+}
+
+.about p {
+  max-width: 750px;
+  margin-bottom: 16px;
+}
+
+/* Footer */
+.footer {
+  padding: 28px 0;
+  background: #263d32;
+  color: #ffffff;
+  text-align: center;
+}
+
+.footer p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+/* Tablet and mobile screens */
+@media (max-width: 700px) {
+  .nav-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    gap: 14px;
+  }
+
+  .hero {
+    min-height: 330px;
+    padding: 55px 6%;
+  }
+
+  .featured {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .featured img {
+    height: 250px;
+  }
+
+  .featured h3 {
+    font-size: 26px;
+  }
+
+  .story-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .gallery-grid img {
+    height: 160px;
+  }
+
+  .section {
+    padding: 42px 0;
+  }
+}
+
+/* Small mobile screens */
+@media (max-width: 380px) {
+  .logo {
+    font-size: 19px;
+  }
+
+  .nav-links {
+    gap: 10px;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid img {
+    height: 210px;
+  }
+}
