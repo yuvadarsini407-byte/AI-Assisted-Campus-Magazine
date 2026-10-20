@@ -1,3 +1,14 @@
+const searchBox = document.getElementById("articleSearch");
+
+searchBox.addEventListener("input", function () {
+  const query = this.value.toLowerCase().trim();
+
+  document.querySelectorAll(".article-card").forEach(card => {
+    const text = card.textContent.toLowerCase();
+
+    card.hidden = !text.includes(query);
+  });
+});
 const themeToggle = document.getElementById("themeToggle");
 
 themeToggle.addEventListener("click", () => {
